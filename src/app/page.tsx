@@ -1,4 +1,10 @@
+import { createClient } from "@supabase/supabase-js";
 import Image from "next/image";
+
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_KEY!
+);
 
 export default function Home() {
   return (

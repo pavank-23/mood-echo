@@ -12,32 +12,39 @@ export default function Component() {
           <header className="flex items-center gap-4">
             <Link
               className="flex items-center gap-2 text-lg font-semibold"
-              href="#"
+              href="/"
             >
               <span>Mood Echo</span>
             </Link>
             <nav className="ml-auto flex items-center gap-4">
               <Link
                 className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-                href="#"
+                href=""
               >
                 Journal
               </Link>
               <Link
                 className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-                href="#"
+                href="analytics"
               >
                 Analytics
               </Link>
+              <Link
+                className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
+                href="analytics"
+              >
+                Sign Up
+              </Link>
             </nav>
           </header>
-          <div className="grid gap-4 p-4 rounded-lg border border-gray-200 shado-inset">
+          <div className="grid gap-4 p-4 rounded-4 border border-gray-200 shado-inset">
             <h1 className="text-2xl font-bold">How are you feeling today?</h1>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Button>Mood 1</Button>
-              <Button>Mood 2</Button>
-              <Button>Mood 3</Button>
-              <Button>Mood 4</Button>
+            <div className="grid grid-cols-5 items-center gap-4">
+              <Button className="bg-emerald-400">Happy</Button>
+              <Button className="bg-gray-600 text-white">Sad</Button>
+              <Button className="bg-cyan-800 text-white">Anxious</Button>
+              <Button className="bg-red-500">Angry</Button>
+              <Button className="bg-red-500">Angry</Button>
             </div>
           </div>
           <div className="grid gap-4 p-4 rounded-lg border border-gray-200 shado-inset">

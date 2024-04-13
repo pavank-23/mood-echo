@@ -1,12 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
 
 export default function Home() {
   return (
@@ -31,6 +23,12 @@ export default function Home() {
           >
             Analytics
           </Link>
+          <Link
+            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
+            href="signup"
+          >
+            Sign Up
+          </Link>
         </nav>
       </header>
       <main className="flex-1">
@@ -44,22 +42,6 @@ export default function Home() {
                 Mood Echo is your personal mental health companion. Log your
                 emotions, gain insights, connect with therapists, and join a
                 supportive community.
-              </p>
-            </div>
-            <div className="mx-auto grid max-w-sm items-start gap-2">
-              <form className="grid gap-2">
-                <Input
-                  className="w-full max-w-[300px]"
-                  placeholder="Enter your email"
-                  type="email"
-                />
-                <Button type="submit">Sign Up</Button>
-              </form>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                Sign up to get notified when we launch.
-                <Link className="underline underline-offset-2" href="#">
-                  Terms & Conditions
-                </Link>
               </p>
             </div>
           </div>

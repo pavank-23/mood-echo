@@ -14,14 +14,11 @@ export default function Component() {
   const [user, setUser] = useState<UserMetadata | null>(null);
 
   const supabase = createClient();
-  async function signUpNewUser(emailx: string, passwordx: string) {
+  async function signIn(emailx: string, passwordx: string) {
     console.log(emailx, passwordx);
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: emailx,
       password: passwordx,
-      options: {
-        emailRedirectTo: "http://localhost:3000/",
-      },
     });
     if (data) console.log(data);
     if (error) console.log(error);
@@ -30,7 +27,7 @@ export default function Component() {
   }
 
   function handleSubmit() {
-    signUpNewUser(email, password);
+    signIn(email, password);
   }
 
   useEffect(() => {
@@ -102,13 +99,8 @@ export default function Component() {
           />
         </div>
         <Button onClick={() => handleSubmit()} className="w-full">
-          Sign Up
+          Sign In
         </Button>
-      </div>
-      <div className="text-center text-sm">
-        <Link className="underline" href="login">
-          Already a user? Sign In
-        </Link>
       </div>
       <div className="text-center text-sm">
         <Link className="underline" href="#">

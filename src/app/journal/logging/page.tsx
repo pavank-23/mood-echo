@@ -31,20 +31,24 @@ export default function Component() {
               </Link>
               <Link
                 className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-                href="analytics"
+                href="/signup"
               >
                 Sign Up
               </Link>
             </nav>
           </header>
-          <div className="grid gap-4 p-4 rounded-4 border border-gray-200 shado-inset">
+          <div className="grid gap-4 p-4 rounded-lg border border-gray-200 shado-inset">
             <h1 className="text-2xl font-bold">How are you feeling today?</h1>
             <div className="grid grid-cols-5 items-center gap-4">
-              <Button className="bg-emerald-400">Happy</Button>
-              <Button className="bg-gray-600 text-white">Sad</Button>
-              <Button className="bg-cyan-800 text-white">Anxious</Button>
-              <Button className="bg-red-500">Angry</Button>
-              <Button className="bg-red-500">Angry</Button>
+              <Button className="rounded-full bg-emerald-400">Happy</Button>
+              <Button className="rounded-full bg-cyan-800 text-white">
+                Anxious
+              </Button>
+              <Button className="rounded-full bg-purple-500">Frustrated</Button>
+              <Button className="rounded-full bg-gray-600 text-white">
+                Sad
+              </Button>
+              <Button className="rounded-full bg-red-500">Angry</Button>
             </div>
           </div>
           <div className="grid gap-4 p-4 rounded-lg border border-gray-200 shado-inset">

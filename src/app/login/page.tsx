@@ -1,14 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { UserMetadata } from "@supabase/supabase-js";
+import { useRouter } from "next/navigation";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default function Component() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState<UserMetadata | null>(null);
@@ -20,55 +24,40 @@ export default function Component() {
       email: emailx,
       password: passwordx,
     });
-    if (data) console.log(data);
-    if (error) console.log(error);
     setEmail("");
     setPassword("");
+    if (data) return data;
+    if (error) return error;
+  }
+  async function getUser() {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    setUser(user!);
   }
 
-  function handleSubmit() {
-    signIn(email, password);
-  }
+  async function handleSubmit() {
+    const res = await signIn(email, password);
+    console.log(res);
+    await getUser();
 
-  useEffect(() => {
-    async function getUser() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      setUser(user!);
+    if (user) {
+      setTimeout(() => {
+        router.push("/");
+      }, 3000);
     }
-  }, [supabase.auth]);
+  }
 
   return (
     <div className="">
-      <header className="flex items-center gap-4 p-4">
-        <Link
-          className="flex items-center gap-2 text-lg font-semibold"
-          href="/"
-        >
-          <span>Mood Echo</span>
-        </Link>
-        <nav className="ml-auto flex items-center gap-4">
-          <Link
-            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="journal/logging"
-          >
-            Journal
-          </Link>
-          <Link
-            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="journal/analytics"
-          >
-            Analytics
-          </Link>
-          <Link
-            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="signup"
-          >
-            Sign Up
-          </Link>
-        </nav>
-      </header>
+      {user && (
+        <Alert>
+          <AlertDescription>
+            You are signed in. Redirecting....
+          </AlertDescription>
+        </Alert>
+      )}
+
       <div className="mx-auto max-w-[400px] space-y-6">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Sign In</h1>
@@ -82,6 +71,7 @@ export default function Component() {
             id="email"
             name="email"
             placeholder="example@example.com"
+            value={email}
             required
             type="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -102,7 +92,7 @@ export default function Component() {
           Sign In
         </Button>
       </div>
-      <div className="text-center text-sm">
+      <div className="text-center text-sm p-2">
         <Link className="underline" href="#">
           Forgot your password?
         </Link>

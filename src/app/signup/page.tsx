@@ -15,7 +15,6 @@ export default function Component() {
 
   const supabase = createClient();
   async function signUpNewUser(emailx: string, passwordx: string) {
-    console.log(emailx, passwordx);
     const { data, error } = await supabase.auth.signUp({
       email: emailx,
       password: passwordx,
@@ -33,14 +32,15 @@ export default function Component() {
     signUpNewUser(email, password);
   }
 
-  useEffect(() => {
-    async function getUser() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      setUser(user!);
-    }
-  }, [supabase.auth]);
+  // useEffect(() => {
+  //   async function getUser() {
+  //     const {
+  //       data: { user },
+  //     } = await supabase.auth.getUser();
+  //     setUser(user!);
+  //   }
+  //   getUser();
+  // }, [supabase.auth]);
 
   return (
     <div className="">
@@ -66,7 +66,13 @@ export default function Component() {
           </Link>
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="signup"
+            href="/forums/dashboard"
+          >
+            Forums
+          </Link>
+          <Link
+            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
+            href="/signup"
           >
             Sign Up
           </Link>
@@ -74,9 +80,9 @@ export default function Component() {
       </header>
       <div className="mx-auto max-w-[400px] space-y-6">
         <div className="space-y-2 text-center">
-          <h1 className="text-3xl font-bold">Sign In</h1>
+          <h1 className="text-3xl font-bold">Sign Up</h1>
           <p className="text-gray-500 dark:text-gray-400">
-            Enter your email below to login to your account
+            Enter your email below to sign up for an account
           </p>
         </div>
         <div className="space-y-2">
@@ -105,12 +111,12 @@ export default function Component() {
           Sign Up
         </Button>
       </div>
-      <div className="text-center text-sm">
+      <div className="text-center text-sm p-2">
         <Link className="underline" href="login">
           Already a user? Sign In
         </Link>
       </div>
-      <div className="text-center text-sm">
+      <div className="text-center text-sm p-2">
         <Link className="underline" href="#">
           Forgot your password?
         </Link>

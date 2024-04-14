@@ -19,9 +19,9 @@ export default function Home() {
           </Link>
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="journal/analytics"
+            href="forums/dashboard"
           >
-            Analytics
+            Forums
           </Link>
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"

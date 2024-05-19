@@ -84,8 +84,6 @@ _Below is an example of how you can instruct your audience on installing and set
    NEXT_PUBLIC_SUPABASE_ANON_KEY = 'ENTER YOUR PROJECT ANON KEY';
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Roadmap
 

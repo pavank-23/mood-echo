@@ -13,19 +13,19 @@ export default function Home() {
         <nav className="ml-auto flex items-center gap-4">
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="journal/logging"
+            href="/journal/logging"
           >
             Journal
           </Link>
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="forums/dashboard"
+            href="/forums/dashboard"
           >
             Forums
           </Link>
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="signup"
+            href="/signup"
           >
             Sign Up
           </Link>

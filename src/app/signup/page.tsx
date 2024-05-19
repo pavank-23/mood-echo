@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { UserMetadata } from "@supabase/supabase-js";
 
@@ -32,18 +32,8 @@ export default function Component() {
     signUpNewUser(email, password);
   }
 
-  // useEffect(() => {
-  //   async function getUser() {
-  //     const {
-  //       data: { user },
-  //     } = await supabase.auth.getUser();
-  //     setUser(user!);
-  //   }
-  //   getUser();
-  // }, [supabase.auth]);
-
   return (
-    <div className="">
+    <div className="flex flex-col min-h-[100dvh]">
       <header className="flex items-center gap-4 p-4">
         <Link
           className="flex items-center gap-2 text-lg font-semibold"
@@ -54,15 +44,9 @@ export default function Component() {
         <nav className="ml-auto flex items-center gap-4">
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="journal/logging"
+            href="/journal/logging"
           >
             Journal
-          </Link>
-          <Link
-            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
-            href="journal/analytics"
-          >
-            Analytics
           </Link>
           <Link
             className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"

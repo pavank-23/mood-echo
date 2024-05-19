@@ -57,7 +57,34 @@ export default function Component() {
           </AlertDescription>
         </Alert>
       )}
-
+      <header className="flex items-center gap-4 p-4">
+        <Link
+          className="flex items-center gap-2 text-lg font-semibold"
+          href="/"
+        >
+          <span>Mood Echo</span>
+        </Link>
+        <nav className="ml-auto flex items-center gap-4">
+          <Link
+            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
+            href="/journal/logging"
+          >
+            Journal
+          </Link>
+          <Link
+            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
+            href="/forums/dashboard"
+          >
+            Forums
+          </Link>
+          <Link
+            className="text-sm font-medium rounded-lg p-2 hover:bg-gray-100 shado w-auto transition-colors duration-150"
+            href="/signup"
+          >
+            Sign Up
+          </Link>
+        </nav>
+      </header>
       <div className="mx-auto max-w-[400px] space-y-6">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Sign In</h1>

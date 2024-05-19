@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a name="readme-top"></a>
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<div align="center">
+
+  <h3 align="center">Mood Echo</h3>
+
+  <p align="center">
+    Embrace Your Emotional Journey: MoodEcho - A Comprehensive Mental Well-being Companion
+    <br />
+    <br />
+    <a href="https://mood-echo.vercel.app/">View Demo</a>
+    ·
+    <a href="https://github.com/pavank-23/mood-echo/issues/new?labels=bug">Report Bug</a>
+    ·
+    <a href="https://github.com/pavank-23/mood-echo/issues/new?labels=enhancement">Request Feature</a>
+  </p>
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+MoodEcho is a mental health app that empowers users to take charge of their emotional well-being. With its intuitive mood tracking, journaling, and analytics features, users can gain self-awareness and identify patterns. The app fosters a supportive community through discussion forums and personalized therapist recommendations. Experience mood-tailored music/podcast suggestions and instant chatbot support for coping strategies. MoodEcho offers a holistic approach to mental health management, combining technology and human connection to promote emotional resilience in today's fast-paced world.
+
+
+### Built With
+* [![Next][Next.js]][Next-url]
+* [![Supabase][Supabase]][Supabase-url]
 
 ## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-## Learn More
+1. Setup a project at [Supabase](https://supabase.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/pavank-23/mood-echo.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API keys in `.env.local` or `.env`
+   ```
+   NEXT_PUBLIC_SUPABASE_URL = 'ENTER YOUR PROJECT URL';
+   NEXT_PUBLIC_SUPABASE_ANON_KEY = 'ENTER YOUR PROJECT ANON KEY';
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Roadmap
 
-## Deploy on Vercel
+- [ x ] Add mood logging
+    - [ ] Mood Analytics
+- [ x ] Add discussion forums for mental health discussions
+- [ ] Add emotion-based music player
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See the [open issues](https://github.com/pavank-23/mood-echo/issues) for a full list of proposed features (and known issues).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/FeatureName`)
+3. Commit your Changes (`git commit -m 'Add some FeattureName'`)
+4. Push to the Branch (`git push origin feature/FeatureName`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+[contributors-shield]: https://img.shields.io/github/contributors/pavank-23/mood-echo.svg?style=for-the-badge
+[contributors-url]: https://github.com/pavank-23/mood-echo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/pavank-23/mood-echo.svg?style=for-the-badge
+[forks-url]: https://github.com/pavank-23/mood-echo/network/members
+[stars-shield]: https://img.shields.io/github/stars/pavank-23/mood-echo.svg?style=for-the-badge
+[stars-url]: https://github.com/pavank-23/mood-echo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/pavank-23/mood-echo.svg?style=for-the-badge
+[issues-url]: https://github.com/pavank-23/mood-echo/issues
+[license-shield]: https://img.shields.io/github/license/pavank-23/mood-echo.svg?style=for-the-badge
+[license-url]: https://github.com/pavank-23/mood-echo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/pavan-k23
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[Supabase]: https://img.shields.io/badge/supabase-000000?style=for-the-badge&logo=supabase&logoColor=white
+[Supabase-url]: https://supabase.com
